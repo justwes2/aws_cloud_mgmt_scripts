@@ -20,9 +20,23 @@ print myTagDict
 approvedUsers = ("Wes", "Kate", "Bill")
 approvedNames = ("Scarif", "Sandbox", "Jakku", "Stardust")
 approvedDepts = ("Monk", "Cosmotology", "Dwellers", "Catnip", "R&D")
+requiredTags = ("User", "Name", "Dept") #need a fix to use keys of requiredAndApproved on line 30
+requiredAndApproved = {
+    "User" : ["Wes", "Kate", "Bill"],
+    "Name" : ["Scarif", "Sandbox", "Jakku", "Stardust"],
+    "Dept" : ["Monk", "Cosmotology", "Dwellers", "Catnip", "R&D"]
+}#change tables to one table and each object is a list of values, then pull in the table, use number of items to set length
+# REFACTOR INTO LIST AND LOOP
+for catagory in requiredTags:
+    if catagory in myTagDict:
+        if myTagDict[catagory] in requiredAndApproved[catagory]:
+            print "Valid"# sucess outcome
+        else:
+            print "Invalid value for " + catagory
+    else:
+        print "No value for " + catagory
 
 # check if required values are present in the dict
-# REFACTOR INTO LIST AND LOOP
 # User
 if "User" in myTagDict:
     # check if required values are valid
