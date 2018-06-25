@@ -6,9 +6,9 @@ instances = ()
 # Below are the values that are required for each instance.
 # Enter the value you want applied in the 'VALUE' slot
 ApplicationTag = 'VALUE'
-ResourcePOCTag = 'VALUE'
-EnvironmentTag = 'VALUE'
-BillingCodeTag = 'VALUE'
+OwnerTag = 'VALUE'
+DeptTag = 'VALUE'
+ClientTag = 'VALUE'
 
 ec2 =  boto3.client('ec2')
 
@@ -29,16 +29,16 @@ for instance in instances:
                 'Value': ApplicationTag
             },
             {
-                'Key': 'ResourcePOC',
-                'Value': ResourcePOCTag
+                'Key': 'Owner',
+                'Value': OwnerTag
             },
             {
-                'Key': 'Environment',
-                'Value': EnvironmentTag
+                'Key': 'Dept',
+                'Value': DeptTag
             },
             {
-                'Key': 'BillingCode',
-                'Value': BillingCodeTag
+                'Key': 'Client',
+                'Value': ClientTag
             },
         ]
     )
